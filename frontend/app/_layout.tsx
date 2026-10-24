@@ -24,7 +24,7 @@ const IS_EXPO_GO = Constants.executionEnvironment === ExecutionEnvironment.Store
 
 // In production/native builds (and web) we DO NOT hold the native splash at
 // all — the Home screen paints on the very first frame with no artificial
-// delay, so tapping the app icon opens Home directly. We keep the brief
+// delay, so tapping the app icon opens the Calculator directly. We keep the brief
 // splash hold ONLY inside Expo Go, where an <Icon> mounting before its font
 // family registers would throw on Android (dev-only safeguard).
 if (IS_EXPO_GO) {
@@ -53,7 +53,7 @@ export default function RootLayout() {
     }
   }, [loaded, error]);
 
-  // Native/production builds and web render Home immediately — no gate, no
+  // Native/production builds and web render the Calculator immediately — no gate, no
   // loading screen. Only Expo Go briefly waits for CDN icon fonts.
   if (IS_EXPO_GO && !loaded && !error) return null;
 

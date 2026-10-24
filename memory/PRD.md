@@ -41,3 +41,6 @@ Delivered as an **Expo React Native** app (user-approved; also runs on web previ
 ## Next Tasks
 - Address cosmetic react-native-web warnings (shadow*/pointerEvents) if targeting web seriously.
 - Consider live currency rates behind an offline fallback (user requested static for now).
+
+## Update (2026-09)
+- App now launches directly on the **Calculator** tab. Home moved from `(tabs)/index.tsx` to `(tabs)/home.tsx` (route `/home`); `app/index.tsx` redirects `/` → `/calculator`. Tabs use `initialRouteName="calculator"` + `backBehavior="initialRoute"` (Android back returns to Calculator). Tab bar order unchanged (Home, Calculator, Finance, Convert).

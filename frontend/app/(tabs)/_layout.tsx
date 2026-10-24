@@ -15,7 +15,7 @@ const TABS: {
   icon: keyof typeof Ionicons.glyphMap;
   activeIcon: keyof typeof Ionicons.glyphMap;
 }[] = [
-  { name: "index", label: "Home", icon: "home-outline", activeIcon: "home" },
+  { name: "home", label: "Home", icon: "home-outline", activeIcon: "home" },
   { name: "calculator", label: "Calculator", icon: "calculator-outline", activeIcon: "calculator" },
   { name: "finance", label: "Finance", icon: "wallet-outline", activeIcon: "wallet" },
   { name: "converters", label: "Convert", icon: "swap-horizontal-outline", activeIcon: "swap-horizontal" },
@@ -90,10 +90,12 @@ function CustomTabBar({ state, navigation }: { state: any; navigation: any }) {
 export default function TabsLayout() {
   return (
     <Tabs
+      initialRouteName="calculator"
+      backBehavior="initialRoute"
       tabBar={(props) => <CustomTabBar {...props} />}
       screenOptions={{ headerShown: false }}
     >
-      <Tabs.Screen name="index" />
+      <Tabs.Screen name="home" />
       <Tabs.Screen name="calculator" />
       <Tabs.Screen name="finance" />
       <Tabs.Screen name="converters" />
